@@ -1,1 +1,52 @@
-<h1>Guess the Number
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+</head>
+<body>
+    <h1>Guess the Number</h1>
+    <script>
+        let num = Math.floor(Math.random() * 11) + 1;
+        let guess = prompt("Guess a number between 1 and 10");
+        let counter = 0
+        let gotIt = false;
+        let attempts = 1; 
+        
+        /* 
+        counter = counter + 1 
+        counter += 1
+        */
+
+        while(gotIt == false)
+        {
+                if(guess == num)
+            {
+                alert ("You guessed it right! The number was " + num + " and it took you " + attempts + " attempts");
+                attempts ++;
+                gotIt = true;
+            }
+            else if (guess < num)
+            {
+                guess = prompt("That was incorrect. Guess Higher");
+                attempts ++; 
+            }
+            else 
+            {
+                guess = prompt ("That was incorrect. Guess Lower");
+                attempts ++;  
+            }        
+        }
+        alert ("You guessed it right! It took " + counter + " attempts");
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
